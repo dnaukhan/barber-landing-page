@@ -1,0 +1,50 @@
+.get-started-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: aqua; */
+  height: 821px;
+}
+
+.get-started-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 24px 0 188px;
+}
+
+.get-started-title {
+  max-width: 600px;
+}
+
+.get-started-title-highlited {
+  color: #fbb400;
+}
+
+.get-started-text {
+  max-width: 526px;
+  margin: 29px 0 97px;
+}
+
+.get-started-button {
+  width: 188px;
+  max-width: 188px;
+  min-width: 188px;
+  border-radius: 20px;
+  background-color: #99baed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 23px 41px;
+}
+
+.get-started-button-text {
+  color: white;
+  font-size: 20px;
+  font-family: "Catamaran";
+  font-weight: 700;
+  line-height: 30.12px;
+  letter-spacing: 0.6px;
+  word-wrap: break-word;
+}

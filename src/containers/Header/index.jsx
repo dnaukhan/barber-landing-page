@@ -32,10 +32,10 @@ const Header = () => {
   return (
     <div className="wrapper">
       <div className="left">
-        <div className="icon">
+        <a href="#" className="icon">
           <img src={imageScissors} alt="Scissors" />
-          <img src={imageLogo} alt="Logo" />
-        </div>
+          <img src={imageLogo} alt="Logo" className="header-icon-second" />
+        </a>
         <div className="nav-link">
           {NavLinkInfo.map((item) => {
             const { id, title, path } = item;
