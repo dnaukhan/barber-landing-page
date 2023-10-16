@@ -6,7 +6,11 @@
 }
 
 .history-left {
+  margin-left: 82px;
   margin-right: 149px;
+  max-width: 968px;
+  max-height: 968px;
+  height: 968px;
 }
 
 .history-right {

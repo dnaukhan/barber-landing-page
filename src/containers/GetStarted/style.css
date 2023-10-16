@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 821px;
 }
 

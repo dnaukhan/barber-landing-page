@@ -20,6 +20,16 @@ h1 {
   word-wrap: break-word;
 }
 
+h3 {
+  color: #163561;
+  font-size: 45px;
+  font-family: "Catamaran";
+  font-weight: 700;
+  line-height: 52.47px;
+  letter-spacing: 1.35px;
+  word-wrap: break-word;
+}
+
 p {
   color: #153461;
   font-size: 25px;
