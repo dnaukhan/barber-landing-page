@@ -3,7 +3,7 @@ import style from "./style.css";
 
 const GetStarted = () => {
   return (
-    <div className="get-started-wrapper">
+    <div className="container get-started-wrapper">
       <div className="get-started-left">
         <h1 className="get-started-title">
           <span className="get-started-title-highlited">Hairstyle</span>{" "}

@@ -1,9 +1,13 @@
-import React from "react";
-import style from "./style.css";
+import React, { useState } from "react";
+import "./style.css";
 import imageLogo from "../../assets/icons/Logo.svg";
 import imageScissors from "../../assets/icons/Scissors.svg";
 import imageProfile from "../../assets/icons/Profile.svg";
 import imageNotification from "../../assets/icons/Notification.svg";
+
+import DropdownMenu from "../../components/DropdownMenu";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 
 const NavLinkInfo = [
   {
@@ -29,36 +33,50 @@ const NavLinkInfo = [
 ];
 
 const Header = () => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(!click);
+  };
+  const closeMobileMenu = () => {
+    setClick(false);
+  };
   return (
-    <div className="wrapper">
-      <div className="left">
-        <a href="#" className="icon">
-          <img src={imageScissors} alt="Scissors" />
-          <img src={imageLogo} alt="Logo" className="header-icon-second" />
-        </a>
-        <div className="nav-link">
+    <nav className="container wrapper">
+      <Link to="/" className="left">
+        <img src={imageScissors} alt="Scissors" />
+        <div className="left-icon-second">
+          <img src={imageLogo} alt="Logo" />
+        </div>
+      </Link>
+
+      <div className="right-menu-icon" onClick={handleClick}>
+        <i className={click ? "fas fa-times" : "fas fa-bars"} />
+      </div>
+      <div className="right">
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
           {NavLinkInfo.map((item) => {
             const { id, title, path } = item;
             return (
-              <a href={path} key={id} className="nav-link-item">
-                <span className="nav-link-item-text">{title}</span>
-              </a>
+              <li key={id} className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  {title}
+                </Link>
+              </li>
             );
           })}
+        </ul>
+
+        <div className="right-icons">
+          <a href="#">
+            <img src={imageProfile} alt="Profile" />
+          </a>
+          <a>
+            <img src={imageNotification} alt="Notification" />
+          </a>
+          <Button>Appointment</Button>
         </div>
       </div>
-      <div className="right">
-        <img src={imageProfile} alt="Profile" className="right-icon" />
-        <img
-          src={imageNotification}
-          alt="Notification"
-          className="right-icon"
-        />
-        <a href="#" className="appointment">
-          <span>Appointment</span>
-        </a>
-      </div>
-    </div>
+    </nav>
   );
 };
 
