@@ -34,6 +34,8 @@ const NavLinkInfo = [
 const Header = () => {
   const [click, setClick] = useState(false);
   let menuRef = useRef();
+  let iconRef = useRef();
+  let logoRef = useRef();
 
   const handleClick = () => {
     setClick(!click);
@@ -41,7 +43,10 @@ const Header = () => {
 
   useEffect(() => {
     const closeMenu = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        !menuRef.current.contains(event.target) &&
+        !iconRef.current.contains(event.target)
+      ) {
         setClick(false);
       }
     };
@@ -60,7 +65,7 @@ const Header = () => {
   return (
     <>
       <nav className="container wrapper">
-        <Link to="/" className="left">
+        <Link to="/" className="left" ref={logoRef}>
           <img src={imageScissors} alt="Scissors" />
           <div className="left-icon-second">
             <img src={imageLogo} alt="Logo" />
@@ -91,7 +96,7 @@ const Header = () => {
             <Button>Appointment</Button>
           </div>
         </div>
-        <div className="right-menu-icon" onClick={handleClick}>
+        <div className="right-menu-icon" ref={iconRef} onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
       </nav>

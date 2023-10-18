@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Header />
-      {/* <GetStarted /> */}
+      <GetStarted />
       {/* <MainContainer />
       <Footer /> */}
     </Router>

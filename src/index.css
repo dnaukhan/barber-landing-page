@@ -20,7 +20,7 @@ body {
   max-width: 1248px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 ul {
