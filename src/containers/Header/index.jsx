@@ -34,49 +34,77 @@ const NavLinkInfo = [
 
 const Header = () => {
   const [click, setClick] = useState(false);
+
   const handleClick = () => {
     setClick(!click);
   };
-  const closeMobileMenu = () => {
-    setClick(false);
-  };
+
   return (
-    <nav className="container wrapper">
-      <Link to="/" className="left">
-        <img src={imageScissors} alt="Scissors" />
-        <div className="left-icon-second">
-          <img src={imageLogo} alt="Logo" />
-        </div>
-      </Link>
+    <>
+      <nav className="container wrapper">
+        <Link to="/" className="left">
+          <img src={imageScissors} alt="Scissors" />
+          <div className="left-icon-second">
+            <img src={imageLogo} alt="Logo" />
+          </div>
+        </Link>
 
-      <div className="right-menu-icon" onClick={handleClick}>
-        <i className={click ? "fas fa-times" : "fas fa-bars"} />
-      </div>
-      <div className="right">
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
-          {NavLinkInfo.map((item) => {
-            const { id, title, path } = item;
-            return (
-              <li key={id} className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                  {title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="right">
+          <ul className="nav-menu">
+            {NavLinkInfo.map((item) => {
+              const { id, title, path } = item;
+              return (
+                <li key={id} className="nav-item">
+                  <Link to="/" className="nav-links">
+                    {title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-        <div className="right-icons">
-          <a href="#">
-            <img src={imageProfile} alt="Profile" />
-          </a>
-          <a>
-            <img src={imageNotification} alt="Notification" />
-          </a>
-          <Button>Appointment</Button>
+          <div className="right-icons">
+            <a href="#">
+              <img src={imageProfile} alt="Profile" />
+            </a>
+            <a>
+              <img src={imageNotification} alt="Notification" />
+            </a>
+            <Button>Appointment</Button>
+          </div>
         </div>
-      </div>
-    </nav>
+        <div className="right-menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+        </div>
+      </nav>
+
+      {click && (
+        <div className="container">
+          <ul className="mobile-nav-menu">
+            {NavLinkInfo.map((item) => {
+              const { id, title, path } = item;
+              return (
+                <li key={id} className="mobile-nav-menu-items">
+                  <Link to="/" className="nav-links">
+                    {title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="mobile-nav-menu-right">
+            <a href="#">
+              <img src={imageProfile} alt="Profile" />
+            </a>
+            <a>
+              <img src={imageNotification} alt="Notification" />
+            </a>
+            <Button>Appointment</Button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -141,6 +141,38 @@
   .right-icons {
     gap: 10px;
   }
+  .mobile-nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .mobile-nav-menu-items {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 8px 14px;
+    font-size: 25px;
+    font-family: "Catamaran";
+    font-weight: 500;
+    line-height: 33.4px;
+    word-wrap: break-word;
+
+    &:hover {
+      background-color: #a3c1ef;
+      color: white;
+      transition: 0.2s linear;
+      border-radius: 5px;
+    }
+  }
+
+  .mobile-nav-menu-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /* sm */
