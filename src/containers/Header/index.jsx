@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./style.css";
 import imageLogo from "../../assets/icons/Logo.svg";
 import imageScissors from "../../assets/icons/Scissors.svg";
 import imageProfile from "../../assets/icons/Profile.svg";
 import imageNotification from "../../assets/icons/Notification.svg";
-
 import DropdownMenu from "../../components/DropdownMenu";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
@@ -34,10 +33,29 @@ const NavLinkInfo = [
 
 const Header = () => {
   const [click, setClick] = useState(false);
+  let menuRef = useRef();
 
   const handleClick = () => {
     setClick(!click);
   };
+
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setClick(false);
+      }
+    };
+
+    if (click) {
+      document.addEventListener("mousedown", closeMenu);
+    } else {
+      document.removeEventListener("mousedown", closeMenu);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", closeMenu);
+    };
+  }, [click]);
 
   return (
     <>
@@ -49,7 +67,7 @@ const Header = () => {
           </div>
         </Link>
 
-        <div className="right">
+        <div className="right" ref={menuRef}>
           <ul className="nav-menu">
             {NavLinkInfo.map((item) => {
               const { id, title, path } = item;
@@ -79,7 +97,7 @@ const Header = () => {
       </nav>
 
       {click && (
-        <div className="container">
+        <div className="container" ref={menuRef}>
           <ul className="mobile-nav-menu">
             {NavLinkInfo.map((item) => {
               const { id, title, path } = item;
