@@ -7,6 +7,7 @@ const History = () => {
         <img
           src={require("../../../assets/images/History.png")}
           alt="History image"
+          className="history-left-img"
         />
       </div>
       <div className="history-right">

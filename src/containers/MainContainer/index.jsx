@@ -23,14 +23,14 @@ function BottomRightCorner() {
 
 const MainContainer = () => {
   return (
-    <div className="main-container-wrapper">
+    <div className="container">
       {/* <TopLeftCorner /> */}
       {/* <TopRightCorner />
       <BottomLeftCorner />
       <BottomRightCorner /> */}
       <History />
-      <Services />
-      <Gallery />
+      {/* <Services />
+      <Gallery /> */}
     </div>
   );
 };

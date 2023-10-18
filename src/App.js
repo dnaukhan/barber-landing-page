@@ -8,8 +8,8 @@ function App() {
     <Router>
       <Header />
       <GetStarted />
-      {/* <MainContainer />
-      <Footer /> */}
+      <MainContainer />
+      {/* <Footer /> */} */}
     </Router>
   );
 }
