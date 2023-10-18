@@ -102,7 +102,7 @@ const Header = () => {
       </nav>
 
       {click && (
-        <div className="container" ref={menuRef}>
+        <div className="container mobile-wrapper" ref={menuRef}>
           <ul className="mobile-nav-menu">
             {NavLinkInfo.map((item) => {
               const { id, title, path } = item;

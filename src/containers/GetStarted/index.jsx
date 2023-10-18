@@ -21,6 +21,7 @@ const GetStarted = () => {
         <img
           src={require("../../assets/images/GetStarted.png")}
           alt="Get Started image"
+          className="get-started-right-img"
         ></img>
       </div>
     </div>

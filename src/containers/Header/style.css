@@ -183,6 +183,13 @@
   }
 }
 
+.mobile-wrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .mobile-menu {
   display: flex;
   flex-direction: column;
